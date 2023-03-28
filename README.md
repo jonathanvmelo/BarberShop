@@ -14,6 +14,8 @@
 
 Título: BarberShop 
 
+Padão de arquitetura de softuware ultilizado: MVC
+
 Descrição: Aplicação para o gerenciamento financeiro e de agendamento de serviços prestados em barbearias.
 
 Objetivo: Resolver a questão de organização de agendamento de serviços atrelados ao cliente levando em consideração data, hora, tipo de serviço, valor do serviço.
