@@ -46,9 +46,9 @@ Objetivo: Resolver a questão de organização de agendamento de serviços atrel
   - Valor
   - Data
   - Hora
-  - Observação
-  
-  * Serviço:
+  - Observação  
+   
+* Serviço:
   - Id
   - Descrição
   - Valor
