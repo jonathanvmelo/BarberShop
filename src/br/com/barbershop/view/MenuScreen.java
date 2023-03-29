@@ -30,13 +30,13 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        javax.swing.JTextField jTextField2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -56,8 +56,10 @@ public class MenuScreen extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BarberShop - Agenda");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Microsoft Uighur", 1, 56)); // NOI18N
@@ -80,7 +82,6 @@ public class MenuScreen extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 100, 40));
 
         jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("jTextField2");
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 260, 40));
 
         jLabel6.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
@@ -98,7 +99,6 @@ public class MenuScreen extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 100, 40));
 
         jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("jTextField3");
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 260, 40));
 
         jLabel8.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
@@ -106,8 +106,8 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel8.setText("Data:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 100, 40));
 
-        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 260, 40));
+        jFormattedTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 260, 40));
 
         jLabel10.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,7 +156,7 @@ public class MenuScreen extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1950, -1));
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/icons/cliente32-icon.png"))); // NOI18N
-        jMenu1.setText(" Cadastro   | ");
+        jMenu1.setText("    Cadastro   | ");
         jMenu1.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/icons/cliente-icon.png"))); // NOI18N
@@ -179,17 +179,22 @@ public class MenuScreen extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/icons/tesoura32-icon.png"))); // NOI18N
-        jMenu2.setText(" Serviços   |");
+        jMenu2.setText("    Serviços   |");
         jMenu2.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
         jMenuBar1.add(jMenu2);
 
-        jMenu5.setText(" Financeiro   |");
+        jMenu5.setText("    Financeiro   |");
         jMenu5.setFont(new java.awt.Font("Microsoft Uighur", 1, 36)); // NOI18N
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText(" Sobre");
+        jMenu6.setText("    Sobre   |");
+        jMenu6.setActionCommand(" Sobre  ");
         jMenu6.setFont(new java.awt.Font("Microsoft Uighur", 1, 36)); // NOI18N
         jMenuBar1.add(jMenu6);
+
+        jMenu7.setText("                           Sair");
+        jMenu7.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
+        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -235,8 +240,8 @@ public class MenuScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -253,6 +258,7 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -261,7 +267,6 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

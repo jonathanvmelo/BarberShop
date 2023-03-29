@@ -4,17 +4,29 @@
  */
 package br.com.barbershop.view;
 
+import br.com.barbershop.controller.LoginController;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author user
  */
 public class LoginScreen extends javax.swing.JFrame {
+    
+    private final LoginController controller;
 
     /**
      * Creates new form Login
      */
     public LoginScreen() {
         initComponents();
+        controller = new LoginController(this);
+        
     }
 
     /**
@@ -28,9 +40,9 @@ public class LoginScreen extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextUserName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPassword = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -51,16 +63,16 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel4.setText("Usuário");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 330, 30));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 330, 30));
+        jTextUserName.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jTextUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 330, 30));
 
         jLabel5.setFont(new java.awt.Font("Microsoft Uighur", 1, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Senha");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 330, 30));
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 330, 30));
+        jPassword.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 330, 30));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Microsoft Uighur", 1, 24)); // NOI18N
@@ -78,6 +90,11 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Novo usuário? Clique aqui");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, 320, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/painel-login.png"))); // NOI18N
@@ -91,9 +108,18 @@ public class LoginScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //controller.loginSystem();
         MenuScreen menu = new MenuScreen();
         menu.setVisible(true);
+        this.dispose();
+        System.out.println(jTextUserName.getText());
+        System.out.println(jPassword.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+     UserRegisterScreen newUser = new UserRegisterScreen();
+        newUser.setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -139,7 +165,28 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JTextField jTextUserName;
     // End of variables declaration//GEN-END:variables
+
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(null, message);
+    }
+    
+    public JPasswordField getjPassword() {
+        return jPassword;
+    }
+    
+    public void setjPassword(JPasswordField jPassword) {
+        this.jPassword = jPassword;
+    }
+    
+    public JTextField getjTextUserName() {
+        return jTextUserName;
+    }
+    
+    public void setjTextUserName(JTextField jTextUserName) {
+        this.jTextUserName = jTextUserName;
+    }
+    
 }

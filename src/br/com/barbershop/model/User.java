@@ -4,6 +4,7 @@
  */
 package br.com.barbershop.model;
 
+import java.text.ParseException;
 import java.util.Date;
 
 /**
@@ -15,13 +16,21 @@ public class User extends Person{
     private String password;
     private String accessLevel;
 
+    public User(String name, String password, String accessLevel ) {
+        super(name);
+        this.password = password;
+        this.accessLevel = accessLevel;
+    }
+
+   
+    
     public User( int id, String name, String password) {
         super(id, name);
         this.password = password;
     }
 
-    public User( int id, String name, char gender, Date date, String cellPhone, String email, String cpf, String password, String accessLevel) {
-        super(id, name, gender, date, cellPhone, email, cpf);
+    public User( int id, String name, char gender, String birthDate, String cellPhone, String email, String cpf, String password, String accessLevel) throws ParseException {
+        super(id, name, gender, birthDate, cellPhone, email, cpf);
         this.password = password;
         this.accessLevel = accessLevel;
     }

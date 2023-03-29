@@ -4,6 +4,7 @@
  */
 package br.com.barbershop.model;
 
+import java.text.ParseException;
 import java.util.Date;
 
 /**
@@ -15,12 +16,12 @@ public class Client extends Person{
     private String cep;
     private String address;
 
-    public Client( int id, String name, char gender, Date date, String cellPhone, String email, String cpf, String cep, String address) {
-        super(id, name, gender, date, cellPhone, email, cpf);
+    public Client( int id, String name, char gender, String birthDate, String cellPhone, String email, String cpf, String cep, String address) throws ParseException {
+        super(id, name, gender, birthDate, cellPhone, email, cpf);
         this.cep = cep;
         this.address = address;
     }
-
+    
     public Client( int id, String name, String cellPhone, String email, String cep, String address) {
         super(id, name, cellPhone, email);
         this.cep = cep;

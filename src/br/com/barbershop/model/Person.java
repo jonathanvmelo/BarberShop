@@ -4,23 +4,31 @@
  */
 package br.com.barbershop.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author user
  */
-
-public abstract class Person {
+abstract class Person {
 
     protected int id;
     protected String name;
     protected char gender;
-    protected Date date;
+    protected Date birthDate;
     protected String cellPhone;
     protected String email;
     protected String cpf;
 
+    public Person(String name) {
+        this.name = name;
+    }
+
+    
     public Person(int id, String name) {
         this.id = id;
         this.name = name;
@@ -32,14 +40,17 @@ public abstract class Person {
         this.cellPhone = cellPhone;
         this.email = email;
     }
-    
-    
 
-    public Person(int id, String name, char gender, Date date, String cellPhone, String email, String cpf) {
+    public Person(int id, String name, char gender, String birthDate, String cellPhone, String email, String cpf) {
         this.id = id;
         this.name = name;
         this.gender = gender;
-        this.date = date;
+        try {
+            this.birthDate = new SimpleDateFormat("dd/MM/yyy").parse(birthDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(Person.class.getName()).log(Level.SEVERE, null, ex);
+        }
+;
         this.cellPhone = cellPhone;
         this.email = email;
         this.cpf = cpf;
@@ -69,13 +80,14 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
+
 
     public String getCellPhone() {
         return cellPhone;
@@ -101,11 +113,6 @@ public abstract class Person {
         this.cpf = cpf;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" + "id = " + id + ", name = " + name + ", gender = " + gender + ", date = " + date + ", cellPhone = " + cellPhone + ", email = " + email + ", cpf = " + cpf + '}';
-    }
-    
-    
+ 
 
 }
