@@ -22,8 +22,11 @@ public class User extends Person{
         this.accessLevel = accessLevel;
     }
 
-   
-    
+    public User( String name, String password) {
+        super(name);
+        this.password = password;
+    }
+
     public User( int id, String name, String password) {
         super(id, name);
         this.password = password;

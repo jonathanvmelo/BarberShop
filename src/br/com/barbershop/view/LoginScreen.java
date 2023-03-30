@@ -5,6 +5,7 @@
 package br.com.barbershop.view;
 
 import br.com.barbershop.controller.LoginController;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +18,7 @@ import javax.swing.JTextField;
  * @author user
  */
 public class LoginScreen extends javax.swing.JFrame {
-    
+
     private final LoginController controller;
 
     /**
@@ -26,7 +27,7 @@ public class LoginScreen extends javax.swing.JFrame {
     public LoginScreen() {
         initComponents();
         controller = new LoginController(this);
-        
+
     }
 
     /**
@@ -40,9 +41,9 @@ public class LoginScreen extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextUserName = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jPassword = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -63,16 +64,16 @@ public class LoginScreen extends javax.swing.JFrame {
         jLabel4.setText("Usuário");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 330, 30));
 
-        jTextUserName.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 330, 30));
+        txtUserName.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 330, 30));
 
         jLabel5.setFont(new java.awt.Font("Microsoft Uighur", 1, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Senha");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 330, 30));
 
-        jPassword.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 330, 30));
+        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 330, 30));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Microsoft Uighur", 1, 24)); // NOI18N
@@ -108,16 +109,16 @@ public class LoginScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //controller.loginSystem();
-        MenuScreen menu = new MenuScreen();
-        menu.setVisible(true);
-        this.dispose();
-        System.out.println(jTextUserName.getText());
-        System.out.println(jPassword.getText());
+      
+        try {
+            controller.toEnterSystem();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-     UserRegisterScreen newUser = new UserRegisterScreen();
+        UserRegisterScreen newUser = new UserRegisterScreen();
         newUser.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
 
@@ -165,28 +166,30 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField jPassword;
-    private javax.swing.JTextField jTextUserName;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
-    
-    public JPasswordField getjPassword() {
-        return jPassword;
+
+    public JPasswordField getTxtPassword() {
+        return txtPassword;
     }
-    
-    public void setjPassword(JPasswordField jPassword) {
-        this.jPassword = jPassword;
+
+    public void setTxtPassword(JPasswordField txtPassword) {
+        this.txtPassword = txtPassword;
     }
-    
-    public JTextField getjTextUserName() {
-        return jTextUserName;
+
+    public JTextField getTxtUserName() {
+        return txtUserName;
     }
-    
-    public void setjTextUserName(JTextField jTextUserName) {
-        this.jTextUserName = jTextUserName;
+
+    public void setTxtUserName(JTextField txtUserName) {
+        this.txtUserName = txtUserName;
     }
-    
+
+
+
 }

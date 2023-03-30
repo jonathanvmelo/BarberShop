@@ -4,13 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/controller/LoginController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/view/UserRegisterScreen.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/DAO/UserDAO.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/model/Person.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/view/LoginScreen.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/view/EmplyeeRegister.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/view/UserRegister.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/view/MenuScreen.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/controller/UserRegisterController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/model/User.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/DAO/ConnectionFactory.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/view/MenuScreen.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/BarberShop/src/br/com/barbershop/controller/helper/LoginHelper.java</file>
         </group>
     </open-files>

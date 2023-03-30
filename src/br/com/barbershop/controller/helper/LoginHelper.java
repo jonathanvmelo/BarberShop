@@ -28,8 +28,8 @@ public class LoginHelper {
     }
 
     public User getModel() {
-        String userName = view.getjTextUserName().getText();
-        String password = view.getjPassword().getText();
+        String userName = view.getTxtUserName().getText();
+        String password = view.getTxtPassword().getText();
         User model = new User(0, userName, password);
         return model;
     }
@@ -38,13 +38,13 @@ public class LoginHelper {
         String name = model.getName();
         String password = model.getPassword();
         
-        view.getjTextUserName().setText(name);
-        view.getjPassword().setText(password);
+        view.getTxtUserName().setText(name);
+        view.getTxtPassword().setText(password);
     }
     
     public void clearScreen(){
-    view.getjTextUserName().setText("");
-    view.getjPassword().setText("");
+    view.getTxtUserName().setText("");
+    view.getTxtPassword().setText("");
     }
 
 }

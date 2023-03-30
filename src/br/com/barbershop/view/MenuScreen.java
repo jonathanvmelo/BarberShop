@@ -4,6 +4,16 @@
  */
 package br.com.barbershop.view;
 
+import br.com.barbershop.DAO.ConnectionFactory;
+import br.com.barbershop.DAO.UserDAO;
+import br.com.barbershop.model.User;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import jdk.nashorn.internal.objects.NativeArray;
+
 /**
  *
  * @author user
@@ -34,7 +44,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -54,11 +64,12 @@ public class MenuScreen extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BarberShop - Agenda");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -98,8 +109,9 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel7.setText("Valor:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 100, 40));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 260, 40));
+        jFormattedTextField3.setBackground(new java.awt.Color(255, 255, 255));
+        jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("¤#,##0"))));
+        getContentPane().add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 260, 40));
 
         jLabel8.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,6 +193,15 @@ public class MenuScreen extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/icons/tesoura32-icon.png"))); // NOI18N
         jMenu2.setText("    Serviços   |");
         jMenu2.setFont(new java.awt.Font("Microsoft Uighur", 0, 36)); // NOI18N
+
+        jMenuItem3.setText("Test UserDao");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
+
         jMenuBar1.add(jMenu2);
 
         jMenu5.setText("    Financeiro   |");
@@ -201,6 +222,35 @@ public class MenuScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        
+        
+        //TESTE 
+        try {
+            Connection conn = new ConnectionFactory().getConnection();
+            UserDAO userDao = new UserDAO(conn);
+            
+            //Teste save()
+            User user1 = new User("Taylor", "Ok!");
+            //userDao.save(user1);
+            //Teste remove
+            //userDao.removeById(6);
+            //Teste select por id
+            //User userSelectById = userDao.selectById(user1);
+            //Teste SelcecAll
+            ArrayList<User> getAllUsers = userDao.getAll();
+        
+            for (User allUser : getAllUsers) {
+                System.out.println(allUser.getName());
+            }
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,6 +292,7 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
+    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -262,11 +313,11 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
