@@ -14,13 +14,14 @@
 
 Título: BarberShop 
 
-Padão de arquitetura de softuware ultilizado: MVC
-
-Nesse modelo tudo que for relacionado a regras de negócio ficará dentro do pacote "controller", tudo que for relacionado a banco de dados dentro do pacote "DAO", as entidades dentro do pacote "model" e as telas dentro do pacote "view". Alem disso, ultilizei um pacote chamado "helper" para armazenar as classes que iram fazer o intermédio entre as classes modelos e os seus respectivos controladores.
-
 Descrição: Aplicação para o gerenciamento financeiro e de agendamento de serviços prestados em barbearias.
 
 Objetivo: Essa aplicação tem como objetivo organizar os atendimentos da barbearia através de agendamentos. Alem disso o sistema contará com breve gestão financeira, que ajudará no controle financeiro.
+
+Padrão de arquitetura de software ultilizado: MVC
+
+Nesse modelo tudo que for relacionado a regras de negócio ficará dentro do pacote "controller", tudo que for relacionado a banco de dados dentro do pacote "DAO", as entidades dentro do pacote "model" e as telas dentro do pacote "view". Alem disso, ultilizei um pacote chamado "helper" para armazenar as classes que iram fazer o intermédio entre as classes modelos e os seus respectivos controladores.
+
 
 ------------------------------------------------
 
@@ -89,7 +90,7 @@ Objetivo: Essa aplicação tem como objetivo organizar os atendimentos da barbea
 
 ---------------------------------------------------
 
-## 5 - Tecnologias ultilizadas:
+## 5 - Tecnologias utilizadas:
 
 * Linguagem: Java;
 
